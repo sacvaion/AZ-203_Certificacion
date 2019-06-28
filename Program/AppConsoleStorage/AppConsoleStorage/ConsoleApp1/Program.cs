@@ -176,6 +176,71 @@ namespace ConsoleApp1
             client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
             await client.CreateDatabaseIfNotExistsAsync(new Database { Id = "clientedb" });
             await client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("clientedb"), new DocumentCollection { Id = "clientecollection" });
+
+            Empleado andersenFamily = new Empleado
+            {
+                Id = "AndersenFamily",
+                LastName = "Andersen",
+                Parents = new Parent[]
+     {
+         new Parent { FirstName = "Thomas" },
+         new Parent { FirstName = "Mary Kay" }
+     },
+                Children = new Child[]
+     {
+         new Child
+         {
+             FirstName = "Henriette Thaulow",
+             Gender = "female",
+             Grade = 5,
+             Pets = new Pet[]
+             {
+                 new Pet { GivenName = "Fluffy" }
+             }
+         }
+     },
+                Address = new Address { State = "WA", County = "King", City = "Seattle" },
+                IsRegistered = true
+            };
+
+            await CreateFamilyDocumentIfNotExists("FamilyDB", "FamilyCollection", andersenFamily);
+
+            Family wakefieldFamily = new Family
+            {
+                Id = "WakefieldFamily",
+                LastName = "Wakefield",
+                Parents = new Parent[]
+                {
+         new Parent { FamilyName = "Wakefield", FirstName = "Robin" },
+         new Parent { FamilyName = "Miller", FirstName = "Ben" }
+                },
+                Children = new Child[]
+                {
+         new Child
+         {
+             FamilyName = "Merriam",
+             FirstName = "Jesse",
+             Gender = "female",
+             Grade = 8,
+             Pets = new Pet[]
+             {
+                 new Pet { GivenName = "Goofy" },
+                 new Pet { GivenName = "Shadow" }
+             }
+         },
+         new Child
+         {
+             FamilyName = "Miller",
+             FirstName = "Lisa",
+             Gender = "female",
+             Grade = 1
+         }
+                },
+                Address = new Address { State = "NY", County = "Manhattan", City = "NY" },
+                IsRegistered = false
+            };
+
+            await CreateFamilyDocumentIfNotExists("FamilyDB", "FamilyCollection", wakefieldFamily);
         }
 
         private void WriteToConsoleAndPromptToContinue(string format, params object[] args)
@@ -183,6 +248,27 @@ namespace ConsoleApp1
             Console.WriteLine(format, args);
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
+        }
+
+        private async Task CreateEmployDocumentIfNotExists(string databaseName, string collectionName, Empleado empleado)
+        {
+            try
+            {
+                await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(databaseName, collectionName, empleado.NoDocumento));
+                WriteToConsoleAndPromptToContinue($"Found {empleado.NoDocumento}");
+            }
+            catch (DocumentClientException de)
+            {
+                if (de.StatusCode == HttpStatusCode.NotFound)
+                {
+                    await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName), empleado);
+                    WriteToConsoleAndPromptToContinue($"Created Family {empleado.NoDocumento}");
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
     }

@@ -16,17 +16,29 @@ namespace ConsoleApp1
             this.RowKey = Guid.NewGuid().ToString();
         }
 
+        public string NoDocumento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string NumeroCelular { get; set; }
         public string UrlFoto { get; set; }
+        public int IdDependencia { get; set; }
+        public int IdTipoContrato { get; set; }
+
     }
 
     public class Dependencia
     {
         public Dependencia() { }
         public int IdDependencia { get; set; }
+        public string Descripcion { get; set; }
+
+    }
+
+    public class TipoContrato
+    {
+        public TipoContrato() { }
+        public int IdTipoContrato { get; set; }
         public string Descripcion { get; set; }
 
     }
