@@ -22,8 +22,8 @@ namespace ConsoleApp1
         public string Email { get; set; }
         public string NumeroCelular { get; set; }
         public string UrlFoto { get; set; }
-        public int IdDependencia { get; set; }
-        public int IdTipoContrato { get; set; }
+        public Dependencia Dependencia { get; set; }
+        public TipoContrato TipoContrato { get; set; }
 
     }
 
