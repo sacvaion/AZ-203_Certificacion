@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="WebAppAz203Context-Web.config Connection String" description="WebAppAz203Context Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=WebAppAz203Context-20190705025511; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|WebAppAz203Context-20190705025511.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\AZ-203_Certificacion\\Program\\WebAppAz203\\WebAppAz203\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WebAppAz203Context']/@connectionString" />
+  </parameter>
+</parameters>

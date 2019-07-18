@@ -1,0 +1,60 @@
+﻿@model WebAppAz203.Models.ObjLoadFile
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+
+
+@using (Html.BeginForm("Create",
+                        "LoadFile",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Load FIle</h4>
+        <hr />
+
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" /><br><br>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Load Image" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    @*@ViewBag.Message<br />*@
+
+    if (ViewBag.ListImages != null)
+    {
+        <table border="1">
+            <tr>
+                <td>
+                    Image Name
+                </td>
+                <td>
+                    DownLoad
+                </td>
+            </tr>
+            @foreach (var Item in ViewBag.ListImages)
+            {
+                <tr>
+                    <td>
+                        @Item.Name
+                    </td>
+                    <td>
+                        @Html.ActionLink("...", "Download", new { CurrentFileName = @Item.Name, @class = "btn btn-primary" })
+                        <div class="col-md-offset-2 col-md-10">
+                            <span class="glyphicon glyphicon-floppy-disk">
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

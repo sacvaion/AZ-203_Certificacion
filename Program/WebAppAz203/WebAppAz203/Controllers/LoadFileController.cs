@@ -28,8 +28,8 @@ namespace WebAppAz203.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.Message = "List contains: " + StorageBlobService.GetBlobList("Images").Count();
-            ViewBag.ListImages = StorageBlobService.GetBlobList("Images");
+            ViewBag.Message = "List contains: " + StorageBlobService.GetBlobList("images").Count();
+            ViewBag.ListImages = StorageBlobService.GetBlobList("images");
 
             return View();
         }
@@ -43,9 +43,9 @@ namespace WebAppAz203.Controllers
                     string storageConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConString"];
                     byte[] contentBlob = new byte[file.ContentLength];
                     file.InputStream.Read(contentBlob, 0, file.ContentLength);
-                    string url = StorageBlobService.SaveBlob(contentBlob, Path.GetFileName(file.FileName), "Images", "Image");
+                    string url = StorageBlobService.SaveBlob(contentBlob, Path.GetFileName(file.FileName), "images", "images");
                     //ViewBag.Message = string.Format("You Image is upload! URL = {0}", url);
-                    ViewBag.ListImages = StorageBlobService.GetBlobList("Images");
+                    ViewBag.ListImages = StorageBlobService.GetBlobList("images");
 
                     /*
                     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
