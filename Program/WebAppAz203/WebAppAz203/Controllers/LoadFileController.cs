@@ -19,12 +19,14 @@ namespace WebAppAz203.Controllers
         }
 
         // GET: LoadFile/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             return View();
         }
 
         // GET: LoadFile/Create
+        [Authorize]
         public ActionResult Create()
         {
 

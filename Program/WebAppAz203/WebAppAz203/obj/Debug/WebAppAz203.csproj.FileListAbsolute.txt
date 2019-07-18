@@ -149,7 +149,6 @@ C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\System.Web.WebPa
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Newtonsoft.Json.xml
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Antlr3.Runtime.pdb
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\obj\Debug\WebAppAz203.csprojAssemblyReference.cache
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\obj\Debug\WebAppAz203.csproj.CoreCompileInputs.cache
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\obj\Debug\WebAppAz203.csproj.CopyComplete
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\obj\Debug\WebAppAz203.dll

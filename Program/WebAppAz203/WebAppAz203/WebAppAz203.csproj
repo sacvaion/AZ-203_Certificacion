@@ -159,7 +159,9 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\wappcasc - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\wappcasc - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\wappcasc - FTP2.pubxml" />
     <None Include="Properties\PublishProfiles\wappcasc - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\wappcasc - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
