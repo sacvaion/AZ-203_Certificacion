@@ -68,7 +68,7 @@ namespace WebAppAz203.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                    ViewBag.Message = "ERROR: " + ex.Message.ToString();
                 }
             else
             {
