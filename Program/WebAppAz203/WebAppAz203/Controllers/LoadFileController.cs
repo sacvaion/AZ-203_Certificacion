@@ -51,7 +51,7 @@ namespace WebAppAz203.Controllers
                     string storageConnectionString = System.Configuration.ConfigurationManager.AppSettings["ConString"];
                     byte[] contentBlob = new byte[file.ContentLength];
                     file.InputStream.Read(contentBlob, 0, file.ContentLength);
-                    string url = StorageBlobService.SaveBlob(contentBlob, Path.GetFileName(file.FileName), "images", "images");
+                    string url = StorageBlobService.SaveBlob(contentBlob, Path.GetFileName(file.FileName), "images", "images2");
                     //ViewBag.Message = string.Format("You Image is upload! URL = {0}", url);
                     ViewBag.ListImages = StorageBlobService.GetBlobList("images");
 
