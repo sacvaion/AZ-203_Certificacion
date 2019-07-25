@@ -158,3 +158,4 @@ C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Microsoft.Window
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Microsoft.Azure.KeyVault.Core.xml
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Microsoft.WindowsAzure.Storage.pdb
 C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\bin\Microsoft.WindowsAzure.Storage.xml
+C:\Git\AZ-203_Certificacion\Program\WebAppAz203\WebAppAz203\obj\Debug\WebAppAz203.csprojAssemblyReference.cache

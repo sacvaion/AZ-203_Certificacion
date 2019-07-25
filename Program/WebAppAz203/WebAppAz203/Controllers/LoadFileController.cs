@@ -19,19 +19,25 @@ namespace WebAppAz203.Controllers
         }
 
         // GET: LoadFile/Details/5
-        [Authorize]
         public ActionResult Details(int id)
         {
             return View();
         }
 
         // GET: LoadFile/Create
-        [Authorize]
         public ActionResult Create()
         {
+            try
+            {
+                ViewBag.Message = "List contains: " + StorageBlobService.GetBlobList("images").Count();
+                ViewBag.ListImages = StorageBlobService.GetBlobList("images");
+            }
+            catch (Exception ex)
+            {
 
-            ViewBag.Message = "List contains: " + StorageBlobService.GetBlobList("images").Count();
-            ViewBag.ListImages = StorageBlobService.GetBlobList("images");
+                ViewBag.Message = "Error " + ex.Message;
+            }
+
 
             return View();
         }

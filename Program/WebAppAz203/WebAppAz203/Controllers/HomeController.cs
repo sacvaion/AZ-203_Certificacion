@@ -12,7 +12,6 @@ namespace WebAppAz203.Controllers
         {
             return View();
         }
-        [Authorize]
 
         public ActionResult About()
         {
@@ -20,8 +19,6 @@ namespace WebAppAz203.Controllers
 
             return View();
         }
-        [Authorize]
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
